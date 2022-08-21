@@ -47,6 +47,30 @@ class UsersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 65
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let section = modelUser.users[indexPath.section]
+        let user = section[indexPath.row]
+        
+        let alert = UIAlertController(title: user.name, message: user.age, preferredStyle: .actionSheet)
+        
+        let profileAction = UIAlertAction(title: "Профиль", style: .default) { (alert) in
+            
+        }
+        
+        let deleteAction = UIAlertAction(title: "Удалить из друзей", style: .destructive) { (alert) in
+            self.modelUser.users[indexPath.section].remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alert.addAction(profileAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
