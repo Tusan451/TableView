@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,13 +40,13 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="W1c-MJ-CG5">
                                             <rect key="frame" x="72" y="20" width="117" height="40.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Имя Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSb-ry-fkc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSb-ry-fkc">
                                                     <rect key="frame" x="0.0" y="0.0" width="117" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Возраст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-qm-r7Q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84J-qm-r7Q">
                                                     <rect key="frame" x="0.0" y="23.5" width="55.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
@@ -75,10 +76,68 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="9BL-he-SXw"/>
+                    <connections>
+                        <segue destination="K2e-E9-4uy" kind="show" identifier="goToProfile" id="L3X-gz-lyC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9l-16-THt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="352.17391304347831" y="91.741071428571431"/>
+        </scene>
+        <!--Профиль-->
+        <scene sceneID="mIV-MG-JTk">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="K2e-E9-4uy" customClass="ProfileViewController" customModule="TableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G8A-BJ-hAB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kam-34-cJs">
+                                <rect key="frame" x="132" y="138" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="A5U-lp-vyw"/>
+                                    <constraint firstAttribute="width" constant="150" id="a8z-8y-uWB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="75"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя Фамилия" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-ht-kOn">
+                                <rect key="frame" x="130.5" y="312" width="153" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Возраст" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wH-tR-dFh">
+                                <rect key="frame" x="172.5" y="353" width="69" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EK4-Xl-kDr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kam-34-cJs" firstAttribute="top" secondItem="EK4-Xl-kDr" secondAttribute="top" constant="50" id="2Cr-YP-Xx1"/>
+                            <constraint firstItem="1Oy-ht-kOn" firstAttribute="centerX" secondItem="G8A-BJ-hAB" secondAttribute="centerX" id="G1Z-3O-OkG"/>
+                            <constraint firstItem="1Oy-ht-kOn" firstAttribute="top" secondItem="Kam-34-cJs" secondAttribute="bottom" constant="24" id="GvL-RR-gc9"/>
+                            <constraint firstItem="0wH-tR-dFh" firstAttribute="centerX" secondItem="G8A-BJ-hAB" secondAttribute="centerX" id="Z4N-i1-eTF"/>
+                            <constraint firstItem="Kam-34-cJs" firstAttribute="centerX" secondItem="G8A-BJ-hAB" secondAttribute="centerX" id="e6H-qy-IBO"/>
+                            <constraint firstItem="0wH-tR-dFh" firstAttribute="top" secondItem="1Oy-ht-kOn" secondAttribute="bottom" constant="12" id="tOr-hV-9so"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Профиль" id="O8Y-Lh-xue"/>
+                    <connections>
+                        <outlet property="profileAge" destination="0wH-tR-dFh" id="fFJ-fj-fyb"/>
+                        <outlet property="profileImage" destination="Kam-34-cJs" id="EKY-w4-pAz"/>
+                        <outlet property="profileName" destination="1Oy-ht-kOn" id="BIb-pD-mga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzF-hR-zWp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264" y="92"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pkn-xV-2R2">

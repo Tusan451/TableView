@@ -55,7 +55,7 @@ class UsersTableViewController: UITableViewController {
         let alert = UIAlertController(title: user.name, message: user.age, preferredStyle: .actionSheet)
         
         let profileAction = UIAlertAction(title: "Профиль", style: .default) { (alert) in
-            
+            self.performSegue(withIdentifier: "goToProfile", sender: indexPath)
         }
         
         let deleteAction = UIAlertAction(title: "Удалить из друзей", style: .destructive) { (alert) in
@@ -72,14 +72,17 @@ class UsersTableViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard segue.identifier == "goToProfile" else { return }
+        let profileVC = segue.destination as! ProfileViewController
+        
+        let indexPath = sender as! IndexPath
+        
+        let section = modelUser.users[indexPath.section]
+        let user = section[indexPath.row]
+        
+        profileVC.user = user
     }
-    */
-
 }

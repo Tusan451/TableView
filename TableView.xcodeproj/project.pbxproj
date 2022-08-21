@@ -16,6 +16,7 @@
 		E070269028B268CB00C2D7F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070268F28B268CB00C2D7F1 /* User.swift */; };
 		E070269228B26A6500C2D7F1 /* ModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070269128B26A6400C2D7F1 /* ModelUser.swift */; };
 		E070269428B26E1500C2D7F1 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070269328B26E1500C2D7F1 /* UsersTableViewController.swift */; };
+		E070269628B27BAB00C2D7F1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E070269528B27BAB00C2D7F1 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E070268F28B268CB00C2D7F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E070269128B26A6400C2D7F1 /* ModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUser.swift; sourceTree = "<group>"; };
 		E070269328B26E1500C2D7F1 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		E070269528B27BAB00C2D7F1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				E070267728B262FB00C2D7F1 /* AppDelegate.swift */,
 				E070267928B262FB00C2D7F1 /* SceneDelegate.swift */,
 				E070269328B26E1500C2D7F1 /* UsersTableViewController.swift */,
+				E070269528B27BAB00C2D7F1 /* ProfileViewController.swift */,
 				E070268D28B2670000C2D7F1 /* UserTableViewCell.swift */,
 				E070268F28B268CB00C2D7F1 /* User.swift */,
 				E070269128B26A6400C2D7F1 /* ModelUser.swift */,
@@ -151,6 +154,7 @@
 				E070267828B262FB00C2D7F1 /* AppDelegate.swift in Sources */,
 				E070269428B26E1500C2D7F1 /* UsersTableViewController.swift in Sources */,
 				E070269228B26A6500C2D7F1 /* ModelUser.swift in Sources */,
+				E070269628B27BAB00C2D7F1 /* ProfileViewController.swift in Sources */,
 				E070268E28B2670000C2D7F1 /* UserTableViewCell.swift in Sources */,
 				E070267A28B262FB00C2D7F1 /* SceneDelegate.swift in Sources */,
 			);
