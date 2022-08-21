@@ -15,24 +15,33 @@ class UsersTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+        return modelUser.users.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modelUser.users.count
+        let section = modelUser.users[section]
+        return section.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! UserTableViewCell
 
-        let user = modelUser.users[indexPath.row]
+        let section = modelUser.users[indexPath.section]
+        let user = section[indexPath.row]
         
         cell.userName.text = user.name
         cell.userAge.text = user.age
         cell.userImage.image = user.image
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Мужчины"
+        } else {
+            return "Женщины"
+        }
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
